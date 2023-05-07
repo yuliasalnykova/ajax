@@ -1,0 +1,15 @@
+{
+"students": [
+    "bobrov",
+    "oshtuk",
+    "kupriyanov",
+    "salnykova",
+    "holota",
+    "shpak",
+    "drevych",
+    "mamonov",
+    "demchenko",
+    "zayarna",
+    "nemchenko"
+]
+}

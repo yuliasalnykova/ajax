@@ -1,0 +1,17 @@
+{
+"languages": [
+    "python",
+    "java",
+    "javascript",
+    "kotlin",
+    "r",
+    "c#",
+    "swift",
+    "php",
+    "c++",
+    "go",
+    "scala",
+    "rust",
+    "dart"
+    ]
+}

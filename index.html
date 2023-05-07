@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" id="languages">languages</a>
+    <a href="#" id="students">students</a>
+    <div id="output" style="background-color: yellow;"></div>
+
+
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        document.getElementById("languages").addEventListener("click", function(event) {
+            event.preventDefault();
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    const languages = data.languages;
+                    let output = "";
+                    for (let i = 0; i < languages.length; i++) {
+                        output += "<li>" + languages[i] + "</li>";
+                    }
+                    outputDiv.innerHTML = "<ul>" + output + "</ul>";
+                }
+            };
+            xhr.open("GET", "/languages");
+            xhr.send();
+        });
+
+        document.getElementById("students").addEventListener("click", function(event) {
+            event.preventDefault();
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    const students = data.students;
+                    let output = "";
+                    for (let i = 0; i < students.length; i++) {
+                        output += "<li>" + students[i] + "</li>";
+                    }
+                    outputDiv.innerHTML = "<ul>" + output + "</ul>";
+                }
+            };
+            xhr.open("GET", "/students");
+            xhr.send();
+        });
+    </script>
+</body> 
+</html>
